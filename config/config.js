@@ -3,32 +3,32 @@ var path = require('path'),
     env = process.env.NODE_ENV || 'development';
 
 var config = {
-  development: {
-    root: rootPath,
-    app: {
-      name: 'nodeblogdemo'
+    development: {
+        root: rootPath,
+        app: {
+            name: 'nodeblogdemo'
+        },
+        port: process.env.PORT || 3000,
+        db: 'mongodb://localhost/nodeblog'
     },
-    port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/nodeblogdemo-development'
-  },
 
-  test: {
-    root: rootPath,
-    app: {
-      name: 'nodeblogdemo'
+    test: {
+        root: rootPath,
+        app: {
+            name: 'nodeblogdemo'
+        },
+        port: process.env.PORT || 3000,
+        db: 'mongodb://localhost/nodeblogdemo-test'
     },
-    port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/nodeblogdemo-test'
-  },
 
-  production: {
-    root: rootPath,
-    app: {
-      name: 'nodeblogdemo'
-    },
-    port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/nodeblogdemo-production'
-  }
+    production: {
+        root: rootPath,
+        app: {
+            name: 'nodeblogdemo'
+        },
+        port: process.env.PORT || 3000,
+        db: 'mongodb://localhost/nodeblogdemo-production'
+    }
 };
 
 module.exports = config[env];
